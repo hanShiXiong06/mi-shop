@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米官网-注册2</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="register W900">
+        <img src="./images/logo.jpg">
+        <h3>注册小米账号</h3>
+        <p class="tit_info">我们已经发送一条验证短信至<span id="tel">+86 18671754705</span>
+        </p>
+
+        <p class="tit_info">请输入短信中的验证码</p>
+        <div class="verify">
+            <input type="text" placeholder="请输入验证码" id="code">
+            <button id="time_btn" onclick="sendCode()">发送验证码</button>
+        </div>
+        <button class="reg_btn" onclick="checkCode()">下一步</button>
+        <button class="reg_back" onclick="history.go(-1)">返回</button>
+    </div>
+    <script>
+        // 页面加载后，从localStorage中获取手机号
+        window.onload = function () {
+            // 1. 获取手机号
+            var tel = localStorage.getItem('phone')
+            var qh = localStorage.getItem('quhao')
+            // 2. 将获取的数据填入span标签中
+            document.getElementById("tel").innerHTML = "+" + qh + " " + tel
+            // 3. 更新按钮中内容           
+            sendCode()
+        }
+        // 发送验证码
+        var time = null
+        function sendCode() {
+            clearInterval(time)
+            var timeObj = document.getElementById("time_btn")
+            var t = 40
+            time = setInterval(function () {
+                t--
+                if (t < 0) {
+                    timeObj.innerHTML = "发送验证码"
+                    timeObj.disabled = false
+                } else {
+                    timeObj.innerHTML = "重新发送(" + t + ")"
+                    timeObj.disabled = true
+                }
+            }, 1000);
+            // 使用随机数生成一个验证码
+            var randNum = Math.floor(Math.random() * 10000)
+            // 将验证码存储到localStorage中
+            localStorage.setItem("verify", randNum)
+            console.log(randNum);
+        }
+        // 单击下一步，判断验证码是否正确
+        function checkCode() {
+            var code = document.getElementById("code")
+            var ver = localStorage.getItem("verify")
+            if (ver == code.value) {
+                location.href = "register3.html"
+            } else {
+                // 弹框提示，验证码不正确
+                alert('验证码不正确')
+                code.focus()
+            }
+        }
+    </script>
+</body>
+
+</html>

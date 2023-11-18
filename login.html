@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米-登录</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div id="logo" class=" W900">
+        <img src="./images/logo.jpg">
+        <h3>小米账号登录</h3>
+        <form action="#" method="post">
+            <input type="text" placeholder="邮箱/手机号/小米ID" id="user">
+            <input type="password" placeholder="密码" id="upwd">
+            <button onclick="doLogin()" type="button">立即登录</button>
+        </form>
+        <div class="login_type">
+            <a href="#">手机短信登录/注册</a>
+            <p>
+                <a href="./register1.html">立即注册</a>|
+                <a href="#">忘记密码</a>
+            </p>
+        </div>
+        <!-- 水平线 -->
+        <div class="other-login">
+            <span>其他方式登录</span>
+            <div class="line"></div>
+        </div>
+        <div class="logins">
+            <a href="#"><img src="./images/zfb.png" alt=""></a>
+            <a href="#"><img src="./images/wechat.png" alt=""></a>
+            <a href="#"><img src="./images/qq.png" alt=""></a>
+            <a href="#"><img src="./images/sina.png" alt=""></a>
+        </div>
+    </div>
+    <div class="footer_out">
+        <div class="footer">
+            <p>
+                <a href="">简体</a>|
+                <a href="">繁体</a>|
+                <a href="">English</a>|
+                <a href="">常见问题</a>|
+                <a href="">隐私政策</a>
+            </p>
+            <p>
+                小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号 
+            </p>
+        </div>
+    </div>
+    <script>
+
+        function doLogin(){
+            // 1. 首先获取注册的用户名和密码
+            var phone = localStorage.getItem('phone')
+            var pwd = localStorage.getItem('pwd')
+            // 2. 获取输入框中的用户名和密码
+            var tel = document.getElementById('user').value
+            var card = document.getElementById('upwd').value
+            // 3. 判断输入的用户名和密码是否正确
+            if(phone==tel && pwd == card){
+                localStorage.setItem("isLogin",true)
+                location.href="home.html"
+            }else{
+                alert("请检查用户名和密码")
+            }
+        }
+    </script>
+</body>
+
+</html>

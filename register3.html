@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米-注册</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <div class="register W900">
+        <img src="./images/logo.jpg">
+        <h3>注册小米账号</h3>
+        <p class="txt_info">您注册的手机号为<span id="tel">18671754705</span>
+        </p>
+
+        <p class="txt_info">请设置您的密码：</p>
+        <div class="pwds">
+            <div>
+                <input type="password" placeholder="请输入密码" id="pwd" onblur="checkPwd()">
+                <span id="pmess"></span>
+            </div>
+            <div>
+                <input type="password" placeholder="请输入确认密码" id="repwd" onblur="checkrePwd()">
+                <span id="rpmess"></span>
+            </div>
+            <p class="pmsg">密码长度8~16位，字母、数字、字符至少包含两种</p>
+        </div>
+        <button class="reg_btn" onclick="doSubmit()">提交</button>
+    </div>
+    <script>
+        // 页面加载完成，显示注册手机号
+        window.onload = function () {
+            var phone = localStorage.getItem("phone")
+            console.log(phone);
+            document.getElementById("tel").innerHTML = phone
+        }
+        // 验证密码
+        var pwdFlag = repwdFlag = false
+        var p1 = document.getElementById('pwd')
+        function checkPwd() {
+            // 获取密码框对象
+            // 定义密码的正则表达式
+            var pReg = /(?!.*\d+$)((?=.*[a-zA-Z])|(?=.*[~!@#$%^&*._?]))^[\da-zA-Z~!@#$%^&*._?]{5,8}$/
+            var pm = document.getElementById("pmess")
+            if (pReg.test(p1.value)) {
+                pm.innerHTML="√"
+                pm.style.color = "green"
+                pwdFlag = true
+                return true;
+            } else {
+                pm.innerHTML="密码不合法"
+                pm.style.color = "#ff6700"
+                pwdFlag = false
+            }
+        }
+        // 确认密码
+        function checkrePwd() {
+            var repwd = document.getElementById("repwd")
+            var rpm = document.getElementById("rpmess")
+            if (repwd.value == p1.value) {
+                rpm.innerHTML="√"
+                rpm.style.color = "green"
+                repwdFlag = true
+            } else {
+                rpm.innerHTML="两次密码不一致"
+                rpm.style.color = "#ff6700"
+                repwdFlag = false
+            }
+        }
+        // 提交
+        function doSubmit() {
+            if (pwdFlag && repwdFlag) {
+                // 将密码保存到本地
+                localStorage.setItem("pwd", p1.value)
+                // 分配一个小米用户id
+
+                var mid = ''
+                for (var i = 0; i < 10; i++) {
+                    mid += Math.floor(Math.random() * 10)
+                }
+                localStorage.setItem("miId", mid);
+                // 页面跳转
+                location.href = "register4.html"
+            }
+        }
+    </script>
+</body>
+
+</html>

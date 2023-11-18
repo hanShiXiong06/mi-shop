@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米-注册</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register W900">
+        <img src="./images/logo.jpg">
+        <h3>注册小米账号</h3>
+        <p class="txt_info mi">您的小米ID是：<span id="uid">2291918432</span>
+        </p>
+
+       
+        <a href="login.html"><button class="reg_btn">登录</button></a>
+    </div>
+    <script>
+       var id =  localStorage.getItem("miId")
+       document.getElementById('uid').innerHTML = id
+    </script>
+</body>
+</html>

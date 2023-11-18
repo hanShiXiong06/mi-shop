@@ -1,0 +1,467 @@
+/* 样式初始化 */
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 微软雅黑;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+input {
+    outline: none;
+}
+
+.W1240 {
+    margin: 0 auto;
+    width: 1240px;
+}
+/* 网页顶部 */
+.car_head{
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid #ff6700;
+    background-color: #fff;
+}
+.car_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+
+}
+.car_top>div{
+    display: flex;
+    align-items: center;
+}
+.car_top>div img{border-radius: 15px;}
+.car_top>div p{
+    margin-left: 35px;
+}
+.car_top>div p span:first-child{
+    margin-right: 15px;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+.car_top>div p span:last-child{
+    color: #757575;
+    font-size: 14px;
+}
+.car_top>ul{
+    display: flex;
+    align-items: center;
+}
+.car_top>ul li{
+    margin:0px 8px;
+    color: #757575;
+    position: relative;
+}
+.userHide{
+    width: 80px;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px 2px #ccc;
+    padding:10px 15px;
+    position: absolute;
+    left: -10px;
+    display: none;
+}
+.userHide a{
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 13px;
+    margin:5px 0px;
+}
+.userHide a:hover{
+    color: #ff6700;
+}
+.car_top>ul li>span,.car_top>ul li>a{
+    color: #757575;
+    font-size: 12px;
+}
+.car_top>ul li>a:hover{
+    color: #ff6700;
+}
+/* 购物车列表 */
+.car_100{
+    width: 100%;
+    padding-bottom: 25px;
+    background-color: #f5f5f5;
+}
+.car_list{
+    padding: 20px 0px;
+}
+.car_list li{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+}
+/* 购物车标题 */
+.car_list li>div{
+    width: 12%;
+    justify-content: center;
+    color: #424242;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.car_list li>div input{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #424242;
+    margin-right: 10px;
+}
+.car_list li>div:nth-child(2){
+    width: 30%;
+}
+.car_list li>div:nth-child(4){
+    width: 20%;
+}
+/* 购物车列表 */
+.proInfo img{
+    margin-right:40px;
+}
+.car_item .smallTotal{
+    color: #ff6700;
+}
+.car_item .btns input{
+    margin-right: 0px;
+    border: 0px;
+    border-top: 1px solid #c5c5c5;
+    border-bottom: 1px solid #c5c5c5;
+    width: 60px;
+    height: 35px;
+    text-align: center;
+}
+.car_item .btns button{
+    width: 37px;
+    height: 37px;
+    border: 1px solid #c5c5c5;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+.car_item .btns button:hover{
+    background-color: #e0e0e0;
+    transition: background-color .2s 0s linear;
+}
+.car_item .btns .descBtn{
+    border-right: 0px;
+}
+.car_item .btns .addBtn{
+    border-left: 0px;
+}
+.delBtn{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px;
+    font-size: 18px;
+}
+.car_footer{
+    height: 45px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cfooter_left{
+    display: flex;
+    padding-left: 25px;
+    color: #555;
+}
+.cfooter_left a{
+    color: #424242;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.cfooter_left a:hover{
+    color: #ff6700;
+}
+.cfooter_left p{
+    color: #424242;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.cfooter_left p span{
+    color: #ff6700;
+    padding: 0px 3px;
+}
+.cfooter_right{
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+    position: relative;
+}
+.totalPrice{
+    color: #ff6700;
+    margin-right: 15px;
+}
+.totalPrice span{
+    padding:3px;
+    font-size: 26px;
+    font-weight: bold;
+}
+.buy{
+    width: 120px;
+    height: 100%;
+    background-color: #e0e0e0;
+    border:0px;
+    color:#b0b0b0;
+
+}
+.balance{
+    display: inline-block;
+    color: #ff6700;
+    border: 1px solid #ff6700;
+    padding: 0px 10px;
+    font-size: 14px;
+    line-height: 45px;
+    position: absolute;
+    right: 0px;
+    top:-55px;
+    background-color: #fff;
+}
+.balance div{
+    position: relative;
+}
+.balance div i{
+    position: absolute;
+    bottom: -10px;
+    width: 10px;
+}
+.lineBox{
+    height:60px;
+    position: relative;
+    align-items: center;
+    margin-top: 30px;
+}
+.lineBox>span{
+    padding: 10px 30px;
+    background-color: #f5f5f5;
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #757575;
+    font-weight: 500;
+    position: absolute;
+    left: 35%;
+    z-index:2;
+}
+.lineBox>.line{
+    height: 1px;
+    width: 100%;
+    background-color: #757575;
+    position: absolute;
+    top:30px;
+    left: 0px;
+}
+/* 还购买了 商品列表 */
+.like{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.like li{
+    width: 19%;
+    background-color: #fff;
+    position: relative;
+    padding-bottom: 5px;
+    overflow: hidden;
+    margin-top: 1%;
+}
+.like li a:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px ;
+
+}
+.like li a img{
+    width: 95%;
+}
+.like li a p{
+    color: #333;
+    padding:5px 0px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+.like li a .lprice{
+    color: #ff6700;
+    margin:5px 0px 5px 0px;
+    font-size: 14px;
+    font-family: 黑体;
+}
+.like li a .hp{
+    color: #757575;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.addCar{
+    display: inline-block;
+    width: 40%;
+    height: 28px;
+    position: absolute;
+    bottom:-40px;
+    border: 1px solid #ff6700;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #ff6700;
+    left: 30%;
+    background-color: #fff;
+}
+.like li:hover .addCar{
+    bottom: 10px;
+    transition: bottom .3s 0s linear;
+}
+.addCar:hover{
+    color:#fff;
+    background-color: #ff6700;
+}
+/* 网页底部 */
+.service{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+.service>div{
+    width: 25%;
+    display: flex;height: 40%;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(200,200,200,.5);
+}
+.service>div:last-child{
+    border-right: 0px;
+}
+.service>div i{
+    font-size: 24px;
+    margin-right: 5px;
+    color: #616161;
+}
+.service>div span{
+    color: #616161;
+}
+.service>div:hover i,.service>div:hover span{
+    color:#ff6700;
+    cursor: pointer;
+}
+/* 友情链接 */
+.link{
+    display: flex;
+    width: 100%;
+    margin-top:30px;
+}
+.link_left{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    padding: 10px 0px 30px 0px;
+}
+.link_left ul li:first-child{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.link_left ul li a{
+    color: #aaa;
+    height: 30px;
+    display: inline-block;
+    font-size: 12px;
+}
+.link_right{
+    border-left: 1px solid #ccc;
+    width: 15%;
+    height: 60%;
+    display: flex;
+    padding-left: 30px;
+    flex-direction: column;
+    /* background-color: red; */
+    align-items: center;
+}
+.link_right p{
+    color: #ff6700;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.link_right span:nth-of-type(1){
+    font-size: 12px;
+    color: #b1b1b1;
+    margin-bottom: 5px;
+}
+.link_right span:nth-of-type(2){
+    border: 1px solid #ff6700;
+    text-align: center;
+    padding:10px 0px;
+    color: #ff6700;
+    font-size: 12px;
+    width: 80%;
+}
+.link_right span:nth-of-type(2):hover{
+    color: #fff;
+    background-color: #ff6700;
+}
+.link_right span:nth-of-type(2) i{
+    color: #ff6700;
+    margin-right:5px;
+}
+/* 版权 */
+.copy_100{
+    width: 100%;
+    background-color: #f5f5f5;
+    height: 280px;
+}
+.copy{
+    display: flex;
+    padding: 40px 0px;
+}
+.copy p{
+    font-size: 13px;
+    line-height:25px;
+}
+.copy p a{
+    color: #757575;
+    font-size: 13px;
+    padding: 0 2px;
+}
+.copy div,.copy div a{
+    color: #b7b7b7;
+    font-size: 12px;
+    height: 23px;
+}
+.copy div:last-child img{
+    margin-top: 15px;
+    margin-right: 10px;
+    width: 80px;
+    height: 30px;
+}
+.copy>img{
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+.copy a:hover{
+    color: #ff6700;
+}
